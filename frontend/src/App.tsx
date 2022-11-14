@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
-  createText as createTextService,
-  getText as getTextService,
+  toCreate as toCreateService,
+  tolist as toListService,
 } from "./services";
 interface response {
   texto: string;
@@ -12,7 +12,7 @@ function App() {
 
   const GetText = async () => {
     try {
-      const data = await getTextService();
+      const data = await toListService();
       setResponse(data);
     } catch (erro) {
       alert(erro);
@@ -25,7 +25,7 @@ function App() {
       texto: text,
     };
     try {
-      createTextService(Data);
+      toCreateService(Data);
     } catch (erro) {
       alert(erro);
     }

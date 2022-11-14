@@ -8,12 +8,12 @@ text = {
 }
 
 @app.route("/")
-def getText():
+def toList():
     return jsonify(text), 200
 
 
 @app.route("/", methods=["POST"])
-def createText():
+def toCreate():
     rs = request.json
     text.update({"texto": rs["texto"].upper()})
     return rs, 200
